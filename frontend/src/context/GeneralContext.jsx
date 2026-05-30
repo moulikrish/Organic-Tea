@@ -16,7 +16,7 @@ const GeneralContextProvider = ({children}) => {
   const [cartCount, setCartCount] = useState(0);
 
   // Optional: set baseURL if your backend is on a consistent port
-  // axios.defaults.baseURL = 'http://localhost:3000';
+  // axios.defaults.baseURL = 'https://organic-tea.onrender.com';
 
   // Put interceptor in useEffect so it is registered once and ejected on cleanup
   useEffect(() => {
@@ -43,7 +43,7 @@ const GeneralContextProvider = ({children}) => {
     if (!userId) return;
     try {
       // ensure correct backend route/port
-      const response = await axios.get('http://localhost:3000/api/cart/fetch-cart');
+      const response = await axios.get('https://organic-tea.onrender.com/api/cart/fetch-cart');
       // if the backend returns array of items, filter by userId
       setCartCount(Array.isArray(response.data) ? response.data.filter(item => item.userId === userId).length : 0);
     } catch (err) {
@@ -70,7 +70,7 @@ const GeneralContextProvider = ({children}) => {
 
       console.log("Login payload sent:", loginInputs);
 
-      const res = await axios.post('http://localhost:3000/api/users/login', loginInputs);
+      const res = await axios.post('https://organic-tea.onrender.com/api/users/login', loginInputs);
 
       console.log("Login response:", res.data);
 
@@ -109,7 +109,7 @@ const GeneralContextProvider = ({children}) => {
 
     try {
       console.log("Register payload:", inputs);
-      const res = await axios.post('http://localhost:3000/api/users/register', inputs);
+      const res = await axios.post('https://organic-tea.onrender.com/api/users/register', inputs);
 
       console.log("Register response:", res.data);
 

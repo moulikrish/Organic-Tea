@@ -29,7 +29,7 @@ const UpdateProduct = () => {
   }, [])
 
   const fetchProduct = async () => {
-    await axios.get(`http://localhost:3000/api/products/fetch-product-details/${id}`).then(
+    await axios.get(`https://organic-tea.onrender.com/api/products/fetch-product-details/${id}`).then(
       (response) => {
         setProductName(response.data.title);
         setProductDescription(response.data.description);
@@ -47,7 +47,7 @@ const UpdateProduct = () => {
   }
 
   const fetchCategories = async () => {
-    await axios.get('http://localhost:3000/api/products/fetch-categories').then(
+    await axios.get('https://organic-tea.onrender.com/api/products/fetch-categories').then(
       (response) => {
         setAvailableCategories(response.data);
       }
@@ -66,7 +66,7 @@ const UpdateProduct = () => {
   const navigate = useNavigate();
 
   const handleUpdateProduct = async () => {
-    await axios.put(`http://localhost:3000/api/products/update-product/${id}`, { productName, productDescription, productMainImg, productCarousel: [productCarouselImg1, productCarouselImg2, productCarouselImg3], productFlavour, productWeight, productCategory, productNewCategory, productPrice, productDiscount }).then(
+    await axios.put(`https://organic-tea.onrender.com/api/products/update-product/${id}`, { productName, productDescription, productMainImg, productCarousel: [productCarouselImg1, productCarouselImg2, productCarouselImg3], productFlavour, productWeight, productCategory, productNewCategory, productPrice, productDiscount }).then(
       (response) => {
         alert("Product updated successfully!");
         navigate('/all-products');

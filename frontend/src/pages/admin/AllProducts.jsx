@@ -19,13 +19,13 @@ const AllProducts = () => {
     const fetchData = async () => {
         setLoading(true);
         try {
-            await axios.get('http://localhost:3000/api/products/fetch-products').then(
+            await axios.get('https://organic-tea.onrender.com/api/products/fetch-products').then(
                 (response) => {
                     setProducts(response.data);
                     setVisibleProducts(response.data);
                 }
             )
-            await axios.get('http://localhost:3000/api/products/fetch-categories').then(
+            await axios.get('https://organic-tea.onrender.com/api/products/fetch-categories').then(
                 (response) => {
                     setCategories(response.data);
                 }
@@ -94,7 +94,7 @@ const AllProducts = () => {
         if (window.confirm(`Are you sure you want to delete "${productName}"? This action cannot be undone.`)) {
             try {
                 setLoading(true);
-                await axios.delete(`http://localhost:3000/api/products/delete-product/${productId}`);
+                await axios.delete(`https://organic-tea.onrender.com/api/products/delete-product/${productId}`);
                 alert('Product deleted successfully!');
                 // Refresh the products list
                 fetchData();

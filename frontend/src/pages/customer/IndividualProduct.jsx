@@ -29,7 +29,7 @@ const IndividualProduct = () => {
     }, [])
 
     const fetchProduct = async () => {
-        await axios.get(`http://localhost:3000/api/products/fetch-product-details/${id}`).then(
+        await axios.get(`https://organic-tea.onrender.com/api/products/fetch-product-details/${id}`).then(
             (response) => {
                 setProductName(response.data.title);
                 setProductDescription(response.data.description);
@@ -58,7 +58,7 @@ const IndividualProduct = () => {
     const buyNow = async () => {
         const token = localStorage.getItem("token");
         await axios.post(
-            'http://localhost:3000/api/orders/buy-product',
+            'https://organic-tea.onrender.com/api/orders/buy-product',
             {
                 title: productName,
                 description: productDescription,
@@ -83,7 +83,7 @@ const IndividualProduct = () => {
     }
 
     const handleAddToCart = async () => {
-        await axios.post('http://localhost:3000/api/cart/add-to-cart', { userId, title: productName, description: productDescription, mainImg: productMainImg, size, quantity: productQuantity, price: productPrice, discount: productDiscount }).then(
+        await axios.post('https://organic-tea.onrender.com/api/cart/add-to-cart', { userId, title: productName, description: productDescription, mainImg: productMainImg, size, quantity: productQuantity, price: productPrice, discount: productDiscount }).then(
             (response) => {
                 alert("product added to cart!!");
                 navigate('/cart');

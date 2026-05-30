@@ -16,7 +16,7 @@ const Profile = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/api/orders/fetch-orders');
+      const res = await axios.get('https://organic-tea.onrender.com/api/orders/fetch-orders');
       const data = Array.isArray(res.data)
         ? res.data
         : Array.isArray(res.data.orders)
@@ -35,7 +35,7 @@ const Profile = () => {
     if (!orderId) return alert('Order ID is required');
 
     try {
-      const { data } = await axios.put('http://localhost:3000/api/orders/cancel-order', { orderId });
+      const { data } = await axios.put('https://organic-tea.onrender.com/api/orders/cancel-order', { orderId });
       alert('Order cancelled successfully!');
 
       setOrders((prev) =>

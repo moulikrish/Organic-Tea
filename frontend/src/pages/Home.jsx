@@ -37,7 +37,7 @@ const Home = () => {
 
   const fetchBanner = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/banners");
+      const response = await axios.get("https://organic-tea.onrender.com/api/banners");
       // response.data expected to be a url string or path
       setBannerImg(response.data);
     } catch (err) {

@@ -57,7 +57,7 @@ const CompleteOrder = () => {
         items: cartItems,
       };
 
-      await axios.post('http://localhost:3000/api/orders/place-cart-order', orderPayload, {
+      await axios.post('https://organic-tea.onrender.com/api/orders/place-cart-order', orderPayload, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
 

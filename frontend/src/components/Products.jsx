@@ -27,8 +27,8 @@ const Products = (props) => {
     try {
       setLoading(true)
       const [productsResponse, categoriesResponse] = await Promise.all([
-        axios.get('http://localhost:3000/api/products/fetch-products'),
-        axios.get('http://localhost:3000/api/products/fetch-categories')
+        axios.get('https://organic-tea.onrender.com/api/products/fetch-products'),
+        axios.get('https://organic-tea.onrender.com/api/products/fetch-categories')
       ])
 
       let fetched = Array.isArray(productsResponse.data) ? productsResponse.data : []
@@ -97,7 +97,7 @@ const Products = (props) => {
     const src = candidates.find(Boolean)
     if (!src) return 'https://via.placeholder.com/400x400?text=No+Image'
     if (/^(https?:|data:)/i.test(src)) return src
-    if (src.startsWith('/')) return `http://localhost:3000${src}`
+    if (src.startsWith('/')) return `https://organic-tea.onrender.com/${src}`
     return src
   }
 
@@ -107,7 +107,7 @@ const Products = (props) => {
       const token = localStorage.getItem('token')
       const config = token ? { headers: { Authorization: `Bearer ${token}` } } : {}
       // backend expected shape may vary — this sends productId and quantity=1
-      await axios.post('http://localhost:3000/api/cart/add-to-cart', { productId: product._id, quantity: 1 }, config)
+      await axios.post('https://organic-tea.onrender.com/api/cart/add-to-cart', { productId: product._id, quantity: 1 }, config)
       // small confirmation
       alert(`${product.title} added to cart`)
     } catch (err) {

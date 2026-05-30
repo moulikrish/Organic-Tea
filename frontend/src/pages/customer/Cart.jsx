@@ -10,7 +10,7 @@ const Cart = () => {
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
-  const BACKEND_URL = "http://localhost:3000/api/cart";
+  const BACKEND_URL = "https://organic-tea.onrender.com/api/cart";
   const token = localStorage.getItem("token");
 
   // Fetch cart items on mount

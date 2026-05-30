@@ -24,7 +24,7 @@ const Navbar = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/products/fetch-categories"
+        "https://organic-tea.onrender.com/api/products/fetch-categories"
       );
       setCategories(response.data);
     } catch (err) {

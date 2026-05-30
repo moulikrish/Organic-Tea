@@ -9,7 +9,7 @@ export default function CollectionSections() {
   const [loading, setLoading] = useState(true);
 
   // If your backend uses a different origin, change this
-  const BACKEND_ORIGIN = 'http://localhost:3000';
+  const BACKEND_ORIGIN = 'https://organic-tea.onrender.com';
 
   // local uploaded image (used as a friendly fallback during local testing)
   // path available in your project environment: /mnt/data/Screenshot 2025-11-21 122758.png

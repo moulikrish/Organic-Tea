@@ -28,13 +28,13 @@ export default function Admin() {
   const fetchCounts = async () => {
     try {
       const users = await axios.get(
-        "http://localhost:3000/api/users/fetch-users"
+        "https://organic-tea.onrender.com/api/users/fetch-users"
       );
       const products = await axios.get(
-        "http://localhost:3000/api/products/fetch-products"
+        "https://organic-tea.onrender.com/api/products/fetch-products"
       );
       const orders = await axios.get(
-        "http://localhost:3000/api/orders/fetch-orders"
+        "https://organic-tea.onrender.com/api/orders/fetch-orders"
       );
 
       setUserCount(users.data.length - 1);

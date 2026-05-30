@@ -13,13 +13,13 @@ const AllUsers = () => {
   }, [])
 
   const fetchUsersData = async () => {
-    await axios.get('http://localhost:3000/api/users/fetch-users').then(
+    await axios.get('https://organic-tea.onrender.com/api/users/fetch-users').then(
       (response) => {
         setUsers(response.data.filter(user => user.usertype === 'customer'));
       }
     )
 
-    await axios.get('http://localhost:3000/api/orders/fetch-orders').then(
+    await axios.get('https://organic-tea.onrender.com/api/orders/fetch-orders').then(
       (response) => {
         setOrders(response.data);
       }

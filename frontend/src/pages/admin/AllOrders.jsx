@@ -21,7 +21,7 @@ const AllOrders = () => {
   }, [])
 
   const fetchOrders = async () => {
-    await axios.get(`http://localhost:3000/api/orders/fetch-orders`).then(
+    await axios.get(`https://organic-tea.onrender.com/api/orders/fetch-orders`).then(
       (response) => {
         setOrders(response.data.reverse());
       }
@@ -30,7 +30,7 @@ const AllOrders = () => {
 
   const cancelOrder = async (orderId) => {
     try {
-      const { data } = await axios.put('http://localhost:3000/api/orders/cancel-order', { orderId });
+      const { data } = await axios.put('https://organic-tea.onrender.com/api/orders/cancel-order', { orderId });
       alert(data.message || "Order cancelled!!");
       fetchOrders();
     } catch (err) {
@@ -40,7 +40,7 @@ const AllOrders = () => {
   };
 
   const updateOrderStatus = async (id) => {
-    await axios.put('http://localhost:3000/api/orders/update-order-status', { id, updateStatus }).then(
+    await axios.put('https://organic-tea.onrender.com/api/orders/update-order-status', { id, updateStatus }).then(
       () => {
         alert("Order status updated!!");
         setUpdateStatus('');
