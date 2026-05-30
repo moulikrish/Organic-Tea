@@ -30,7 +30,7 @@ function App() {
   const fetchCart = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:3000/api/cart/fetch-cart"
+        "https://organic-tea.onrender.com/api/cart/fetch-cart"
       );
       setCartItems(data);
     } catch (err) {
